@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <nav class="navbar">
+            <a href="./index.html" class="navitem">Home</a>
+            <a href="./images.html" class="navitem">Images(Images + flex)</a>
+            <a href="./table.html" class="navitem">Table(Chess Board)</a>
+        </nav>
+        <div class="main-content">
+            <div class="image-container">
+                <img class="image" src="./img/img1.jpg"/>
+                <img class="image" src="./img/img2.jpg"/>
+                <img class="image" src="./img/img3.jpg"/>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2023 - <span id="gaming">Gaming</span></p>
+        </footer>
+    </div>
+</body>
+</html>
+<script>
+    const elements = document.querySelectorAll(".image");
+    for (const element of elements) {  
+        let rotation = 0;
+
+        if(rotation>360){
+            rotation = 0;
+        } 
+
+        setInterval(() => {
+            rotation+=3;
+            element.style.transform = `rotate(${rotation}deg)`
+        }, 10);
+    }
+</script>

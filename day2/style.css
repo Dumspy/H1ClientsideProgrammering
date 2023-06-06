@@ -1,0 +1,113 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+}
+
+.navbar {
+    height: 50px;
+    background-color: salmon;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    position: sticky;
+    top: 0px;
+}
+
+.navitem {
+    text-decoration: none;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.navitem:hover {
+    color: #ccc;
+}
+
+footer {
+    height: 30px;
+    background-color: salmon;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-content {
+    overflow: auto;
+    height: calc(100vh - 80px);
+    padding: 1rem;
+}
+
+.image {
+    height: 200px;
+}
+
+.image-container {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    height: 100%;
+}
+
+.chess-wrapper table {
+    border-collapse: collapse;
+    box-shadow: 20px 20px 10px #ccc;
+}
+
+.chess-wrapper td {
+    padding: 2rem;
+    background-color: black;
+}
+
+.chess-wrapper tr:nth-child(even) > td:nth-child(even){
+    background-color: white;
+}
+
+.chess-wrapper tr:nth-child(odd) > td:nth-child(odd){
+    background-color: white;
+}
+
+.chess-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 5rem;
+}
+
+.chess-flex-wrapper {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.chess-flew-row {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+.chess-flex-item {
+    height: 4rem;
+    width: 4rem;
+    background-color: black;
+}
+
+.chess-flex-row:nth-child(odd) > .chess-flex-item:nth-child(odd){
+    background-color: white;
+}
+
+.chess-flex-row:nth-child(even) > .chess-flex-item:nth-child(even){
+    background-color: white;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <nav class="navbar">
+            <a href="./index.html" class="navitem">Home</a>
+            <a href="./images.html" class="navitem">Images(Images + flex)</a>
+            <a href="./table.html" class="navitem">Table(Chess Board)</a>
+        </nav>
+        <div class="main-content">
+            Home
+        </div>
+        <footer>
+            <p>&copy; 2023 - <span id="gaming">Gaming</span></p>
+        </footer>
+    </div>
+</body>
+</html>
+<script>
+    const elements = document.getElementsByTagName("*");
+    for (const element of elements) {        
+        setInterval(() => {
+            element.style['background-color'] = `rgb(${Math.random()*255},0,${Math.random()*255})`
+            element.style.color = `rgb(${Math.random()*255},0,${Math.random()*255})`
+        }, 100);
+    }
+</script>
