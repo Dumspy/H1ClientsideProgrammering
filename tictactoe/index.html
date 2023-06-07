@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="ttt-board">
+            <div class="ttt-row">
+                <div class="ttt-cell" id="0"></div>
+                <div class="ttt-cell" id="1"></div>
+                <div class="ttt-cell" id="2"></div>
+            </div>
+            <div class="ttt-row">
+                <div class="ttt-cell" id="3"></div>
+                <div class="ttt-cell" id="4"></div>
+                <div class="ttt-cell" id="5"></div>
+            </div>
+            <div class="ttt-row">
+                <div class="ttt-cell" id="6"></div>
+                <div class="ttt-cell" id="7"></div>
+                <div class="ttt-cell" id="8"></div>
+            </div>
+        </div>
+        <p id="next-player">Næste spiller: X</p>
+    </div>
+</body>
+</html>
+<script>
+    let board = new Array(9).fill('')
+    let firstPlayerTurn = true
+
+    const elements = document.querySelectorAll('.ttt-cell')
+
+    elements.forEach(element => {
+        element.addEventListener('click', () => {
+            if(board[element.id] == '') {
+                if(firstPlayerTurn) {
+                    element.innerHTML = 'X'
+                    board[element.id] = 'X'
+                } else {
+                    element.innerHTML = 'O'
+                    board[element.id] = 'O'
+                }
+
+                if(calculateWinner(board)) {
+                    alert((firstPlayerTurn ? 'X' : 'O') + ' har vundet!')
+                    board = new Array(9).fill('')
+                    elements.forEach(element => {
+                        element.innerHTML = ''
+                    })
+                }
+
+                firstPlayerTurn = !firstPlayerTurn
+                document.getElementById('next-player').innerHTML = "Næste spiller: " + (firstPlayerTurn ? 'X' : 'O')
+            
+                if(!board.includes('')) {
+                    alert('Spillet er uafgjort!')
+                    board = new Array(9).fill('')
+                    elements.forEach(element => {
+                        element.innerHTML = ''
+                    })
+                }
+            }
+        })
+    })
+
+    function calculateWinner(board){
+        const winners = [
+            [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
+            [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
+            [0, 4, 8], [2, 4, 6] // Diagonals
+        ]
+
+        for(let i = 0; i < winners.length; i++) {
+            const [a, b, c] = winners[i]
+            if(board[a] && board[a] === board[b] && board[a] === board[c]) {
+                return true
+            }
+        }
+
+        return false
+    }
+</script>

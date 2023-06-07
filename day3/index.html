@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="body">
+        <header class="header">
+            <div class="logo"></div>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </nav>
+        </header>
+        <main class="main-content">
+            <div class="left">
+                <!-- TODO MAKE SOMETHING WITH A GRID-->
+            </div>
+            <div class="right">
+                <form action="#" class="form">
+                    <label for="firstname">First name:</label>
+                    <input type="text" id="firstname" name="firstname" value="">
+                    <label for="lastname">Last name:</label>
+                    <input type="text" id="lastname" name="lastname" value="">
+                    <label for="message">Message:</label>
+                    <textarea type="text" id="message" name="message" value="">
+                    </textarea> 
+                    <div class="submit-button">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form> 
+            </div>
+        </main>
+        <footer class="footer">
+            
+        </footer>
+    </div>
+</body>
+</html>
+<script>
+    const elements = document.querySelectorAll('.form > *');
+
+    for (const element of elements) {
+        element.addEventListener('click', () => {
+            element.classList.add('spin');
+        });
+    }
+</script>
