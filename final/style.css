@@ -125,6 +125,12 @@ nav>a {
     gap: 1rem;
 }
 
-.form input, textarea {
+.form input,
+textarea {
     width: 100%;
+}
+
+.group-image {
+    max-width: 685px;
+    max-height: 685px;
 }
