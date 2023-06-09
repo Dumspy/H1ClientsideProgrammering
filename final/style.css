@@ -98,24 +98,12 @@ nav>a {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 2px;
+    gap: 20px;
 }
 
-
-#portrait1 {
-    grid-area: 1 / 1 / 2 / 2;
-}
-
-#portrait2 {
-    grid-area: 1 / 2 / 2 / 3;
-}
-
-#portrait3 {
-    grid-area: 2 / 1 / 3 / 2;
-}
-
-#portrait4 {
-    grid-area: 2 / 2 / 3 / 3;
+.group-image {
+    max-width: 685px;
+    max-height: 685px;
 }
 
 .form {
@@ -127,9 +115,4 @@ nav>a {
 .form input,
 textarea {
     width: 100%;
-}
-
-.group-image {
-    max-width: 685px;
-    max-height: 685px;
 }
